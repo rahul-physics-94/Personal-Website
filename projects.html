@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>About Me</title>
+    <title>Projects</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
@@ -19,9 +19,18 @@
         </nav>
     </header>
 
-    <section id="about">
-        <h1>About Me</h1>
-        <p id="about-intro"></p> <!-- For typewriter effect -->
+    <section id="projects">
+        <h1>My Projects</h1>
+        <div class="filter-bar">
+            <button onclick="filterProjects('all')">All</button>
+            <button onclick="filterProjects('web')">Web Development</button>
+            <button onclick="filterProjects('design')">Design</button>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item" data-category="web">Project 1</div>
+            <div class="gallery-item" data-category="design">Project 2</div>
+            <!-- Add more items with data-category -->
+        </div>
     </section>
 
     <footer>

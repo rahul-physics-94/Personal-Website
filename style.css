@@ -1,104 +1,173 @@
+/* General reset and layout */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
+/* Animated Gradient Background */
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    background: linear-gradient(120deg, #e0eafc, #cfdef3);
-    background-size: 200% 200%;
-    animation: gradientAnimation 8s ease infinite;
+    background: linear-gradient(45deg, #e6f7ff, #b3e0ff, #80cfff, #4db8ff);
+    background-size: 300% 300%;
+    animation: gradientBackground 10s ease infinite;
 }
 
-@keyframes gradientAnimation {
+@keyframes gradientBackground {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-.header {
-    background: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    padding: 1rem 0;
+
+
+/* Navigation bar */
+header {
+    background-color: #333;
+    padding: 10px 0;
     text-align: center;
 }
 
-.header h1 {
-    font-size: 2rem;
-}
-
-.header nav ul {
-    list-style: none;
+header nav ul {
+    list-style-type: none;
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 20px;
 }
 
-.header nav ul li a {
+header nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
+    padding: 8px 16px;
+    transition: background 0.3s;
 }
 
-.header nav ul li a:hover {
-    color: #ffafbd;
+header nav ul li a:hover {
+    background-color: #555;
+    border-radius: 4px;
 }
 
-.section {
-    padding: 4rem 2rem;
-    margin: 1rem auto;
+/* Section styling */
+section {
+    padding: 50px 20px;
     max-width: 800px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    transition: opacity 0.5s;
 }
 
-.section h2 {
-    color: #333;
-    margin-bottom: 2rem;
+section:hover {
+    opacity: 1 !important;
+}
+
+section:not(:hover) {
+    opacity: 0.6;
+}
+
+/* Experience and Projects - Expandable */
+.experience-item, .gallery-item {
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.experience-item:hover, .gallery-item:hover {
+    background-color: #e9f5ff;
+    cursor: pointer;
+}
+
+.experience-details {
+    display: none;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Projects - Filter bar */
+.filter-bar {
     text-align: center;
-    font-size: 1.8rem;
+    margin-bottom: 20px;
 }
 
-.experience-timeline {
+.filter-bar button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter-bar button:hover {
+    background-color: #555;
+}
+
+/* Contact Form */
+form {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
 }
 
-.experience-item {
-    padding: 1rem;
-    border-left: 3px solid #333;
-    position: relative;
-    padding-left: 1.5rem;
+form label {
+    margin-top: 10px;
 }
 
-.experience-item h3 {
-    font-size: 1.2rem;
-    color: #333;
+form input, form textarea {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
-.experience-item p {
-    color: #555;
-}
-
-.experience-item:before {
-    content: '';
-    position: absolute;
-    left: -8px;
-    top: 0;
-    width: 16px;
-    height: 16px;
-    background: #333;
-    border-radius: 50%;
-}
-
-.footer {
-    text-align: center;
-    padding: 1rem;
-    background: rgba(0, 0, 0, 0.8);
+button {
+    background-color: #333;
     color: #fff;
+    border: none;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 5px 0;
+    background-color: #333;
+    color: #fff;
+    margin-top: 800px;
+}
+/* Slide-in animation for scroll */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Slide-in animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 10;
+        transform: translateX(0);
+    }
+}
+
+section {
+    opacity: 0;
+    animation: slideIn 1.2s ease-out forwards;
+    animation-delay: 0.4s;
 }
