@@ -1,5 +1,5 @@
 // Typewriter effect for homepage introduction
-const typewriterText = "Welcome to My Portfolio!";
+const typewriterText = "";
 const speed = 100;
 let i = 0;
 

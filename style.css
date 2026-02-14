@@ -8,7 +8,7 @@
 
 /* Animated Gradient Background */
 body {
-    background: linear-gradient(45deg, #e6f7ff, #b3e0ff, #80cfff, #4db8ff);
+    background: linear-gradient(45deg, #e6f7ff, oklab(97.642% 0.00038 -0.00138), #fcfeff, hsl(210, 8%, 95%));
     background-size: 300% 300%;
     animation: gradientBackground 10s ease infinite;
 }
@@ -154,20 +154,9 @@ section.visible {
     opacity: 1;
     transform: translateY(0);
 }
-/* Slide-in animation */
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(20px);
-    }
-    to {
-        opacity: 10;
-        transform: translateX(0);
-    }
-}
-
-section {
-    opacity: 0;
-    animation: slideIn 1.2s ease-out forwards;
-    animation-delay: 0.4s;
+hr {
+    border: none;
+    height: 10px;
+    background-color: #1212df;
+    margin: 40px 0;
 }
